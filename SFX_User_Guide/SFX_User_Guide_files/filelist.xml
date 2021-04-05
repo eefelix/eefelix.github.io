@@ -127,10 +127,10 @@
  <o:File HRef="image121.png"/>
  <o:File HRef="image122.png"/>
  <o:File HRef="image123.png"/>
- <o:File HRef="image124.jpg"/>
+ <o:File HRef="image124.png"/>
  <o:File HRef="image125.png"/>
  <o:File HRef="image126.png"/>
- <o:File HRef="image127.png"/>
+ <o:File HRef="image127.jpg"/>
  <o:File HRef="image128.png"/>
  <o:File HRef="image129.png"/>
  <o:File HRef="image130.png"/>
@@ -164,5 +164,8 @@
  <o:File HRef="image158.png"/>
  <o:File HRef="image159.png"/>
  <o:File HRef="image160.png"/>
+ <o:File HRef="image161.png"/>
+ <o:File HRef="image162.png"/>
+ <o:File HRef="image163.png"/>
  <o:File HRef="filelist.xml"/>
 </xml>
