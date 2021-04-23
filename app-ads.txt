@@ -1,1 +1,6 @@
 google.com, pub-5914455509387254, DIRECT, f08c47fec0942fa0
+facebook.com, 1145753062610830, RESELLER, c3e20eee3f780d68
+pubmatic.com, 158060, RESELLER, 5d62403b186f2ace
+pubmatic.com, 157962, RESELLER, 5d62403b186f2ace
+pubmatic.com, 158853, RESELLER, 5d62403b186f2ace
+adingo.jp, 24791, DIRECT
