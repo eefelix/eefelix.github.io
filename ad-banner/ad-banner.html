@@ -20,44 +20,52 @@
       height: auto;
       text-align: center;
     }
+    .fade-banner {
+      position: relative;
+      display: inline-block;
+      width: 512px; /* your banner width */
+      height: 80px;  /* your banner height */
+      overflow: hidden;
+      background-color: black;  /* black background */
+      text-decoration: none; /* remove underline */
+    }
+    .banner-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      object-fit: cover;
+    }
+    .banner-img.show {
+      opacity: 1;
+    }
+       /* Hide by default, shown by script only if show_ads param exists */
+    .fade-banner.hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
-<a href="https://apps.apple.com/us/app/sfx-calc-premium/id1573567879" target="_blank" class="fade-banner">
-  <img src="macOSAdsBanner1.png" class="banner-img show">
-  <img src="macOSAdsBanner2.png" class="banner-img">
-</a>
-<style>
-.fade-banner {
-  position: relative;
-  display: inline-block;
-  width: 512px; /* your banner width */
-  height: 80px;  /* your banner height */
-  overflow: hidden;
-  background-color: black;  /* black background */
-  text-decoration: none; /* remove underline */
-}
-.banner-img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  object-fit: cover;
-}
-.banner-img.show {
-  opacity: 1;
-}
-</style>
-
-<script>
-let index = 0;
-const images = document.querySelectorAll('.banner-img');
-setInterval(() => {
-  images[index].classList.remove('show');
-  index = (index + 1) % images.length;
-  images[index].classList.add('show');
-}, 10000); // switch every 3 seconds
-</script>
+    <a href="https://apps.apple.com/us/app/sfx-calc-premium/id1573567879" target="_blank" class="fade-banner hidden" id="banner">
+    <img src="macOSAdsBanner1.png" class="banner-img show">
+    <img src="macOSAdsBanner2.png" class="banner-img">
+  </a>
+  <script>
+      // Check if "show_ads" parameter is present in the URL
+    const params = new URLSearchParams(window.location.search);
+    const showAds = params.has('show_ads');
+    if (showAds) {
+      const banner = document.getElementById('banner');
+      banner.classList.remove('hidden');
+      let index = 0;
+      const images = document.querySelectorAll('.banner-img');
+      setInterval(() => {
+        images[index].classList.remove('show');
+        index = (index + 1) % images.length;
+        images[index].classList.add('show');
+      }, 10000); // switch every 3 seconds
+    }
+  </script>
 </body>
 </html>
