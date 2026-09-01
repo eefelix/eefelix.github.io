@@ -123,13 +123,57 @@ because a webview blocked a third-party request:
    in the scientific-constants list) were still hard to read at 30px
    tall. Increased to 42px.
 
+## Step 4 — Worked examples added to every key card (2026-09-01)
+
+Following the same spirit as this redesign (real examples like the fx-10F/fx-50F manual's own
+worked-example tables, but reflecting SFX-Calc's own verified behavior, not ported Casio numbers),
+a worked example — keystrokes shown as the existing key-icon images, followed by a real device
+screenshot of the resulting display — was added to nearly every card in the "Key reference"
+section. The full planning/verification trail lives in the `SFX-Calc` repo, at
+`SFX-CalcTests/USER_GUIDE_EXAMPLES_PLAN.md` and `SFX-CalcTests/USER_GUIDE_EXAMPLE_INVENTORY.md`;
+summarized here for this repo's own record:
+
+- **New UI test target** (`SFX-Calc` repo, `SFX-CalcUITests/`) drives the real Premium-target app
+  in the iPhone 16 simulator for every example, screenshotting just the display panel
+  (`accessibilityIdentifier("displayPanel")`, added to `ContentView.swift`) — so every example's
+  result is an actual on-device capture, not a mockup, and every keystroke sequence was confirmed
+  to produce that exact result before being wired into the guide.
+- **New reusable components** added to this file's `<style>` block:
+  - `.key-row.example-row` / `.example-label` / `.example-arrow` / `.example-shot` — a labeled
+    "EXAMPLE" row: the keystroke icons (reusing the guide's own existing key-icon images, so the
+    pictured input can't drift from what the icon key actually looks like elsewhere on the page),
+    an arrow (omitted when the sequence ends on the Equal key, since the result is then the
+    obvious next state), and the real screenshot in a bordered box.
+  - `.example-substeps` / `.example-substep` — a compact variant used for the statistics/regression
+    group, where several examples share one long dataset-entry sequence: the entry is shown once
+    as a full `.example-row`, followed by short labeled read-out substeps instead of repeating the
+    whole entry each time.
+- **84 examples** across 5 groups, landed across 6 phases (0 = pipeline, 1 = inventory, 2-6 =
+  content): core arithmetic & entry (20), memory & mode keys (11), function keys (24), statistics
+  & regression (13), base-n / binary-octal-hex (16). Every one of the 84 keystroke scripts was
+  verified against the real simulator output; none needed correction from its predicted value.
+- New images: 84 `media/example-<id>.png` files (e.g. `example-g1-plus-basic.png`,
+  `example-g5-hexA.png`), one per example, cropped to just the display panel (1058×249 at
+  baseline; a rare display-panel sizing quirk seen on wide-mantissa results is corrected in the
+  screenshot-generation step, not in the shipped app — see the plan doc's Phase 2/4 notes).
+- Verified with the same headless-Chrome/DevTools-protocol technique as Step 2, at phone width
+  (390px) and desktop width, in both light and dark mode — confirmed correct icon wrapping, no
+  horizontal overflow, and correct dark-mode theming (both new components inherit the page's
+  existing CSS custom properties; no new hardcoded colors were introduced).
+- A small number of key-rows intentionally have no worked example (All Cancel's sibling
+  Alternative-Function key, the random-number Dot alt row, the formula-menu Mode Set alt row) —
+  either non-deterministic or out of scope as a separate feature; see the inventory file's
+  "Skipped" notes for the full list and reasoning per row.
+
 ## Where things stand
 
 - `SFX_User_Guide.htm` is the deployed page (kept at the same filename/URL
   so the app's existing webview link keeps working).
-- `media/` holds the key icons, calculator screenshots, and the app icon.
+- `media/` holds the key icons, calculator screenshots, the app icon, and the 84 new worked-example
+  screenshots (Step 4).
 - `SFX_User_Guide_files/` was removed (superseded, see Step 2).
-- `SFX_User_Guide.docx` is untouched and still holds the canonical wording.
+- `SFX_User_Guide.docx` is untouched and still holds the canonical wording (the worked examples are
+  structured UI data, not prose, so they're authored directly in the `.htm` — see Step 4).
 - Nothing here has been committed to git yet — changes are sitting in the
   working tree for review.
 

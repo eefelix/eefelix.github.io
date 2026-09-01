@@ -229,6 +229,35 @@
   }
   .key-desc .math.inline{white-space:nowrap}
 
+  /* Worked examples (keystrokes -> real display screenshot) inside a key card */
+  .key-row.example-row{
+    flex-direction:column;align-items:stretch;gap:.55rem;
+    background:var(--surface-2);border-radius:10px;padding:.75rem .9rem;
+  }
+  .example-label{
+    margin:0;font-size:.78rem;font-weight:700;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.04em;
+  }
+  .example-row .keycaps{flex-wrap:wrap}
+  .example-arrow{color:var(--text-muted);font-size:1.3rem;font-weight:600;line-height:1;padding:0 .1rem}
+  .example-shot{
+    align-self:flex-start;display:inline-flex;
+    background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.5rem .7rem;
+  }
+  .example-shot img{width:auto;height:64px;max-width:100%;border-radius:4px;background:transparent;border:0;padding:0}
+
+  /* Statistics/regression worked examples: one shared dataset entry, then several compact
+     read-out substeps (mean, population SD, ...) instead of repeating the whole entry each time */
+  .example-substeps{
+    display:flex;flex-direction:column;gap:.55rem;
+    margin-top:.6rem;padding-top:.6rem;border-top:1px dashed var(--border);
+  }
+  .example-substep{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+  .example-substep-note{font-weight:600;min-width:9em}
+  .example-substep .keycaps img{width:36px;height:36px}
+  .example-substep .example-shot{padding:.3rem .5rem}
+  .example-substep .example-shot img{height:42px}
+
   .table-scroll{overflow-x:auto;margin:.5rem 0;-webkit-overflow-scrolling:touch}
   table.mini-table{border-collapse:collapse;width:100%;font-size:.98rem;min-width:280px}
   table.mini-table th,table.mini-table td{
@@ -484,6 +513,12 @@
 <p>Release the error state</p>
 <p>Alterative function is to clear the 10 volatile memory spaces in additional to the all cancel functions, or to clear the all the stored data for the linear regression and the statistic calculation</p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image21.png" alt="3"/><img src="media/image14.png" alt="AC"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g2-all-cancel.png" alt="Display shows 0."/></div>
+        </div>
     </article>
     <article class="key-card" id="key-2" data-search="clear">
       <div class="key-card-head">
@@ -493,6 +528,11 @@
         <div class="key-row">
           <div class="keycaps"><img src="media/image15.png"/></div>
           <div class="key-desc">Clear the current entry for correction</div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image21.png" alt="3"/><img src="media/image47.png" alt="+"/><img src="media/image21.png" alt="3"/><img src="media/image22.png" alt="4"/><img src="media/image23.png" alt="5"/><img src="media/image15.png" alt="C"/><img src="media/image45.png" alt="."/><img src="media/image21.png" alt="3"/><img src="media/image22.png" alt="4"/><img src="media/image23.png" alt="5"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g2-clear.png" alt="Display shows 123.345"/></div>
         </div>
     </article>
     <article class="key-card" id="key-3" data-search="alternative function">
@@ -541,6 +581,24 @@
         <div class="key-row">
           <div class="keycaps"><img src="media/image16.png"/><img src="media/image17.png"/></div>
           <div class="key-desc">Alterative function is to show the formula menu. After choosing the formula from the menu, the formula calculation will be executed</div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image20.png" alt="2"/><img src="media/image20.png" alt="2"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image86.png" alt="M+"/><img src="media/image23.png" alt="5"/><img src="media/image86.png" alt="M+"/><img src="media/image42.png" alt="7"/><img src="media/image86.png" alt="M+"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g4-sd-entry.png" alt="Display shows 7. (last value entered)"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image21.png" alt="3"/><img src="media/image19.png" alt="1"/><img src="media/image55.png" alt="("/><img src="media/image20.png" alt="2"/><img src="media/image86.png" alt="M+"/><img src="media/image20.png" alt="2"/><img src="media/image55.png" alt="("/><img src="media/image22.png" alt="4"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image55.png" alt="("/><img src="media/image24.png" alt="6"/><img src="media/image86.png" alt="M+"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g4-lr-entry.png" alt="Display shows 6. (last y value entered)"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g5-enter-basen.png" alt="Display shows 0. (Base-n mode, decimal)"/></div>
         </div>
     </article>
     <article class="key-card" id="key-5" data-search="digits">
@@ -678,6 +736,61 @@
 </tbody>
 </table></div></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image50.png" alt="×"/><img src="media/image16.png" alt="ALT"/><img src="media/image19.png" alt="1"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-constant-recall.png" alt="Display shows 599584916."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example — dataset {2, 3, 3, 5, 7} entered above, then:</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image20.png" alt="2"/><img src="media/image20.png" alt="2"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image86.png" alt="M+"/><img src="media/image23.png" alt="5"/><img src="media/image86.png" alt="M+"/><img src="media/image42.png" alt="7"/><img src="media/image86.png" alt="M+"/></div>
+          <div class="example-shot"><img src="media/example-g4-sd-entry.png" alt="Display shows 7. (last value entered)"/></div>
+          <div class="example-substeps">
+          <div class="example-substep">
+            <span class="example-substep-note">Mean (x̄): ALT 1</span>
+            <div class="keycaps"><img src="media/image16.png" alt="ALT"/><img src="media/image19.png" alt="1"/></div>
+            <span class="example-arrow">→</span>
+            <div class="example-shot"><img src="media/example-g4-sd-mean.png" alt="Display shows 4."/></div>
+          </div>
+          <div class="example-substep">
+            <span class="example-substep-note">Population SD (σₙ): ALT 2</span>
+            <div class="keycaps"><img src="media/image16.png" alt="ALT"/><img src="media/image20.png" alt="2"/></div>
+            <span class="example-arrow">→</span>
+            <div class="example-shot"><img src="media/example-g4-sd-popsd.png" alt="Display shows 1.788854382"/></div>
+          </div>
+          <div class="example-substep">
+            <span class="example-substep-note">Sample SD (σₙ₋₁): ALT 3</span>
+            <div class="keycaps"><img src="media/image16.png" alt="ALT"/><img src="media/image21.png" alt="3"/></div>
+            <span class="example-arrow">→</span>
+            <div class="example-shot"><img src="media/example-g4-sd-sampsd.png" alt="Display shows 2."/></div>
+          </div>
+          </div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example — dataset {(1,2), (2,4), (3,6)} entered above, then:</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image21.png" alt="3"/><img src="media/image19.png" alt="1"/><img src="media/image55.png" alt="("/><img src="media/image20.png" alt="2"/><img src="media/image86.png" alt="M+"/><img src="media/image20.png" alt="2"/><img src="media/image55.png" alt="("/><img src="media/image22.png" alt="4"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image55.png" alt="("/><img src="media/image24.png" alt="6"/><img src="media/image86.png" alt="M+"/></div>
+          <div class="example-shot"><img src="media/example-g4-lr-entry.png" alt="Display shows 6. (last y value entered)"/></div>
+          <div class="example-substeps">
+          <div class="example-substep">
+            <span class="example-substep-note">Intercept (A): ALT 7</span>
+            <div class="keycaps"><img src="media/image16.png" alt="ALT"/><img src="media/image42.png" alt="7"/></div>
+            <span class="example-arrow">→</span>
+            <div class="example-shot"><img src="media/example-g4-lr-intercept.png" alt="Display shows 0."/></div>
+          </div>
+          <div class="example-substep">
+            <span class="example-substep-note">Slope (B): ALT 8</span>
+            <div class="keycaps"><img src="media/image16.png" alt="ALT"/><img src="media/image43.png" alt="8"/></div>
+            <span class="example-arrow">→</span>
+            <div class="example-shot"><img src="media/example-g4-lr-slope.png" alt="Display shows 2."/></div>
+          </div>
+          <div class="example-substep">
+            <span class="example-substep-note">Correlation (r): ALT 9</span>
+            <div class="keycaps"><img src="media/image16.png" alt="ALT"/><img src="media/image25.png" alt="9"/></div>
+            <span class="example-arrow">→</span>
+            <div class="example-shot"><img src="media/example-g4-lr-correlation.png" alt="Display shows 1."/></div>
+          </div>
+          </div>
+        </div>
     </article>
     <article class="key-card" id="key-6" data-search="dot">
       <div class="key-card-head">
@@ -701,6 +814,17 @@
 <p>The value will be displayed in exponential format</p>
 <p>Alternative function is to recall the last answer</p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image21.png" alt="3"/><img src="media/image46.png" alt="EXP"/><img src="media/image22.png" alt="4"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g1-exponent-entry.png" alt="Display shows 123. with exponent 4"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image21.png" alt="3"/><img src="media/image47.png" alt="+"/><img src="media/image22.png" alt="4"/><img src="media/image52.png" alt="="/><img src="media/image14.png" alt="AC"/><img src="media/image16.png" alt="ALT"/><img src="media/image46.png" alt="EXP"/><img src="media/image50.png" alt="×"/><img src="media/image20.png" alt="2"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-exponent-recall-ans.png" alt="Display shows 14."/></div>
+        </div>
     </article>
     <article class="key-card" id="key-8" data-search="plus">
       <div class="key-card-head">
@@ -713,6 +837,21 @@
 <p>Tapping <img src="media/image48.png"/>twice will store the 1<sup>st</sup> (X) operand as constant (C) for subsequent addition: <span class="math inline"><em>X</em> + <em>C</em></span></p>
 <p>Alternative function is to find the remainder of the 1<sup>st</sup> (X) operand divided by the 2<sup>nd</sup> (Y) operand: <span class="math inline"><em>X</em> <em>M</em><em>O</em><em>D</em> <em>Y</em></span></p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image21.png" alt="3"/><img src="media/image47.png" alt="+"/><img src="media/image22.png" alt="4"/><img src="media/image45.png" alt="."/><img src="media/image23.png" alt="5"/><img src="media/image49.png" alt="−"/><img src="media/image23.png" alt="5"/><img src="media/image21.png" alt="3"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-plus-basic.png" alt="Display shows −25.5"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image45.png" alt="."/><img src="media/image21.png" alt="3"/><img src="media/image47.png" alt="+"/><img src="media/image47.png" alt="+"/><img src="media/image21.png" alt="3"/><img src="media/image52.png" alt="="/><img src="media/image24.png" alt="6"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-plus-constant.png" alt="Display shows 8.3"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image42.png" alt="7"/><img src="media/image16.png" alt="ALT"/><img src="media/image47.png" alt="+"/><img src="media/image21.png" alt="3"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-mod.png" alt="Display shows 1."/></div>
+        </div>
     </article>
     <article class="key-card" id="key-9" data-search="minus">
       <div class="key-card-head">
@@ -723,6 +862,11 @@
           <div class="keycaps"><img src="media/image49.png"/></div>
           <div class="key-desc"><p>Perform subtraction of the 1<sup>st</sup> (X) and 2<sup>nd</sup> (Y) operand: <span class="math inline"><em>X</em> − <em>Y</em></span></p>
 <p>Tapping <img src="media/image49.png"/>twice will store the 1<sup>st</sup> (X) operand as constant (C) for subsequent subtraction: <span class="math inline"><em>X</em> − <em>C</em></span></p></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image23.png" alt="5"/><img src="media/image45.png" alt="."/><img src="media/image24.png" alt="6"/><img src="media/image49.png" alt="−"/><img src="media/image49.png" alt="−"/><img src="media/image42.png" alt="7"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-minus-constant.png" alt="Display shows 1.4"/></div>
         </div>
     </article>
     <article class="key-card" id="key-10" data-search="multiply">
@@ -736,6 +880,21 @@
 <p>Tapping <img src="media/image50.png"/>twice will store the 1<sup>st</sup> (X) operand as constant (C) for subsequent multiplication: <span class="math inline"><em>X</em> × <em>C</em></span></p>
 <p>Alternative function is to raise the 1<sup>st</sup> (X) operand to the power of 2<sup>nd</sup> (Y) operand: <span class="math inline"><em>X</em><sup><em>Y</em></sup></span></p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image45.png" alt="."/><img src="media/image21.png" alt="3"/><img src="media/image50.png" alt="×"/><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-multiply-basic.png" alt="Display shows 27.6"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image50.png" alt="×"/><img src="media/image50.png" alt="×"/><img src="media/image20.png" alt="2"/><img src="media/image45.png" alt="."/><img src="media/image21.png" alt="3"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-multiply-constant.png" alt="Display shows 27.6"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image16.png" alt="ALT"/><img src="media/image50.png" alt="×"/><img src="media/image23.png" alt="5"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-power.png" alt="Display shows 32."/></div>
+        </div>
     </article>
     <article class="key-card" id="key-11" data-search="divide">
       <div class="key-card-head">
@@ -748,6 +907,21 @@
 <p>Tapping <img src="media/image51.png"/>twice will store the 1<sup>st</sup> (X) operand as constant (C) for subsequent division: <span class="math inline"><em>X</em> ÷ <em>C</em></span></p>
 <p>Alternative function is to take 2<sup>nd</sup> (Y) operant root of 1<sup>st</sup> (X) operand: <span class="math inline"><sup>Y</sup>&radic;<em>X</em></span></p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image42.png" alt="7"/><img src="media/image22.png" alt="4"/><img src="media/image51.png" alt="÷"/><img src="media/image20.png" alt="2"/><img src="media/image45.png" alt="."/><img src="media/image23.png" alt="5"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-divide-basic.png" alt="Display shows 29.6"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image45.png" alt="."/><img src="media/image23.png" alt="5"/><img src="media/image51.png" alt="÷"/><img src="media/image51.png" alt="÷"/><img src="media/image42.png" alt="7"/><img src="media/image22.png" alt="4"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-divide-constant.png" alt="Display shows 29.6"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image21.png" alt="3"/><img src="media/image20.png" alt="2"/><img src="media/image16.png" alt="ALT"/><img src="media/image51.png" alt="÷"/><img src="media/image23.png" alt="5"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-root.png" alt="Display shows 2."/></div>
+        </div>
     </article>
     <article class="key-card" id="key-12" data-search="equal">
       <div class="key-card-head">
@@ -759,6 +933,23 @@
           <div class="key-desc"><p>Conduct the 2 operands calculation and display the result</p>
 <p>Alternative function is to conduct percentage, premium, discount calculation</p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image23.png" alt="5"/><img src="media/image18.png" alt="0"/><img src="media/image18.png" alt="0"/><img src="media/image50.png" alt="×"/><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image16.png" alt="ALT"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-percent-basic.png" alt="Display shows 180."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image23.png" alt="5"/><img src="media/image18.png" alt="0"/><img src="media/image18.png" alt="0"/><img src="media/image50.png" alt="×"/><img src="media/image19.png" alt="1"/><img src="media/image23.png" alt="5"/><img src="media/image16.png" alt="ALT"/><img src="media/image52.png" alt="="/><img src="media/image47.png" alt="+"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g1-percent-addon.png" alt="Display shows 2875."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image21.png" alt="3"/><img src="media/image23.png" alt="5"/><img src="media/image18.png" alt="0"/><img src="media/image18.png" alt="0"/><img src="media/image50.png" alt="×"/><img src="media/image20.png" alt="2"/><img src="media/image23.png" alt="5"/><img src="media/image16.png" alt="ALT"/><img src="media/image52.png" alt="="/><img src="media/image49.png" alt="−"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g1-percent-discount.png" alt="Display shows 2625."/></div>
+        </div>
     </article>
     <article class="key-card" id="key-13" data-search="pi">
       <div class="key-card-head">
@@ -769,6 +960,11 @@
           <div class="keycaps"><img src="media/image53.png"/></div>
           <div class="key-desc"><p>Recall the constant value pi (3.14 ...)</p>
 <p>When the formula calculation is being executed, it is used to enter the input variables and to show the output results. The input variables and the output results will be stored into the volatile memory spaces (from <img src="media/image54.png"/><img src="media/image18.png"/>(K0) to <img src="media/image54.png"/><img src="media/image25.png"/>(K9)), so that when the formula is invoked next time, then the same calculation can be executed by just pressing this key without entering new values</p></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image50.png" alt="×"/><img src="media/image53.png" alt="π"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-pi-multiply.png" alt="Display shows 6.283185307"/></div>
         </div>
     </article>
     <article class="key-card" id="key-14" data-search="open bracket / input x-component of data">
@@ -784,6 +980,17 @@
           <div class="keycaps"><img src="media/image56.png"/></div>
           <div class="key-desc">In the linear regression calculation mode, it is used to enter the x-component of data</div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image50.png" alt="×"/><img src="media/image55.png" alt="("/><img src="media/image21.png" alt="3"/><img src="media/image47.png" alt="+"/><img src="media/image22.png" alt="4"/><img src="media/image57.png" alt=")"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-bracket-precedence.png" alt="Display shows 14."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image21.png" alt="3"/><img src="media/image19.png" alt="1"/><img src="media/image55.png" alt="("/><img src="media/image20.png" alt="2"/><img src="media/image86.png" alt="M+"/><img src="media/image20.png" alt="2"/><img src="media/image55.png" alt="("/><img src="media/image22.png" alt="4"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image55.png" alt="("/><img src="media/image24.png" alt="6"/><img src="media/image86.png" alt="M+"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g4-lr-entry.png" alt="Display shows 6. (last y value entered)"/></div>
+        </div>
     </article>
     <article class="key-card" id="key-15" data-search="close bracket / estimate from linear regression">
       <div class="key-card-head">
@@ -798,6 +1005,23 @@
           <div class="keycaps"><img src="media/image58.png"/></div>
           <div class="key-desc">In the linear regression calculation mode, it is used to estimate the y-component for a given x-component, or the alternative function is to estimate the x-component for a given y-component</div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image50.png" alt="×"/><img src="media/image55.png" alt="("/><img src="media/image21.png" alt="3"/><img src="media/image47.png" alt="+"/><img src="media/image22.png" alt="4"/><img src="media/image57.png" alt=")"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g1-bracket-precedence.png" alt="Display shows 14."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image21.png" alt="3"/><img src="media/image19.png" alt="1"/><img src="media/image55.png" alt="("/><img src="media/image20.png" alt="2"/><img src="media/image86.png" alt="M+"/><img src="media/image20.png" alt="2"/><img src="media/image55.png" alt="("/><img src="media/image22.png" alt="4"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image55.png" alt="("/><img src="media/image24.png" alt="6"/><img src="media/image86.png" alt="M+"/><img src="media/image23.png" alt="5"/><img src="media/image57.png" alt=")"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g4-lr-estimate-y.png" alt="Display shows 10."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image21.png" alt="3"/><img src="media/image19.png" alt="1"/><img src="media/image55.png" alt="("/><img src="media/image20.png" alt="2"/><img src="media/image86.png" alt="M+"/><img src="media/image20.png" alt="2"/><img src="media/image55.png" alt="("/><img src="media/image22.png" alt="4"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image55.png" alt="("/><img src="media/image24.png" alt="6"/><img src="media/image86.png" alt="M+"/><img src="media/image43.png" alt="8"/><img src="media/image16.png" alt="ALT"/><img src="media/image57.png" alt=")"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g4-lr-estimate-x.png" alt="Display shows 4."/></div>
+        </div>
     </article>
     <article class="key-card" id="key-16" data-search="store volatile memory">
       <div class="key-card-head">
@@ -808,6 +1032,11 @@
           <div class="keycaps"><img src="media/image54.png"/></div>
           <div class="key-desc"><p>Store the currently displayed value into one of the 10 volatile memory spaces</p>
 <p>The volatile memory space can be selected from <img src="media/image54.png"/><img src="media/image18.png"/>(K0) to <img src="media/image54.png"/><img src="media/image25.png"/>(K9)</p></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image23.png" alt="5"/><img src="media/image24.png" alt="6"/><img src="media/image54.png" alt="K.IN"/><img src="media/image19.png" alt="1"/><img src="media/image14.png" alt="AC"/><img src="media/image59.png" alt="K.OUT"/><img src="media/image19.png" alt="1"/><img src="media/image47.png" alt="+"/><img src="media/image23.png" alt="5"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g2-store-recall.png" alt="Display shows 61."/></div>
         </div>
     </article>
     <article class="key-card" id="key-17" data-search="recall volatile memory / shift function in linear regression and statistic calculation mode">
@@ -884,6 +1113,36 @@
 </tbody>
 </table></div></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image23.png" alt="5"/><img src="media/image24.png" alt="6"/><img src="media/image54.png" alt="K.IN"/><img src="media/image19.png" alt="1"/><img src="media/image14.png" alt="AC"/><img src="media/image59.png" alt="K.OUT"/><img src="media/image19.png" alt="1"/><img src="media/image47.png" alt="+"/><img src="media/image23.png" alt="5"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g2-store-recall.png" alt="Display shows 61."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example — dataset {2, 3, 3, 5, 7} entered above, then:</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image20.png" alt="2"/><img src="media/image20.png" alt="2"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image86.png" alt="M+"/><img src="media/image23.png" alt="5"/><img src="media/image86.png" alt="M+"/><img src="media/image42.png" alt="7"/><img src="media/image86.png" alt="M+"/></div>
+          <div class="example-shot"><img src="media/example-g4-sd-entry.png" alt="Display shows 7. (last value entered)"/></div>
+          <div class="example-substeps">
+          <div class="example-substep">
+            <span class="example-substep-note">Σx²: KOUT 1</span>
+            <div class="keycaps"><img src="media/image59.png" alt="K.OUT"/><img src="media/image19.png" alt="1"/></div>
+            <span class="example-arrow">→</span>
+            <div class="example-shot"><img src="media/example-g4-sd-sumsq.png" alt="Display shows 96."/></div>
+          </div>
+          <div class="example-substep">
+            <span class="example-substep-note">Σx: KOUT 2</span>
+            <div class="keycaps"><img src="media/image59.png" alt="K.OUT"/><img src="media/image20.png" alt="2"/></div>
+            <span class="example-arrow">→</span>
+            <div class="example-shot"><img src="media/example-g4-sd-sum.png" alt="Display shows 20."/></div>
+          </div>
+          <div class="example-substep">
+            <span class="example-substep-note">n: KOUT 3</span>
+            <div class="keycaps"><img src="media/image59.png" alt="K.OUT"/><img src="media/image21.png" alt="3"/></div>
+            <span class="example-arrow">→</span>
+            <div class="example-shot"><img src="media/example-g4-sd-count.png" alt="Display shows 5."/></div>
+          </div>
+          </div>
+        </div>
     </article>
     <article class="key-card" id="key-18" data-search="display value in engineering exponential format (forward direction) / switching between decimal and binary in base-n mode">
       <div class="key-card-head">
@@ -899,6 +1158,23 @@
         <div class="key-row">
           <div class="keycaps"><img src="media/image63.png"/></div>
           <div class="key-desc">When the calculation mode is base-n, tapping <img src="media/image63.png"/>can switch to Decimal and (Alternative function) Binary calculation</div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image45.png" alt="."/><img src="media/image21.png" alt="3"/><img src="media/image22.png" alt="4"/><img src="media/image23.png" alt="5"/><img src="media/image24.png" alt="6"/><img src="media/image61.png" alt="ENG"/><img src="media/image61.png" alt="ENG"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g2-eng-forward.png" alt="Display shows 12345.6 with m (milli) prefix"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image42.png" alt="7"/><img src="media/image16.png" alt="ALT"/><img src="media/image61.png" alt="ENG"/><img src="media/image22.png" alt="4"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g2-permutation.png" alt="Display shows 840."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image20.png" alt="2"/><img src="media/image16.png" alt="ALT"/><img src="media/image61.png" alt="ENG"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g5-eng-binary.png" alt="Display shows binary 10110 (= decimal 22)"/></div>
         </div>
     </article>
     <article class="key-card" id="key-19" data-search="display value in engineering exponential format (reverse direction) / switching between hexadecimal and octal in base-n mode">
@@ -916,6 +1192,29 @@
           <div class="keycaps"><img src="media/image66.png"/></div>
           <div class="key-desc">When the calculation mode is base-n, tapping can switch to Hexadecimal and (Alternative function) Octal calculation</div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image45.png" alt="."/><img src="media/image21.png" alt="3"/><img src="media/image22.png" alt="4"/><img src="media/image23.png" alt="5"/><img src="media/image24.png" alt="6"/><img src="media/image61.png" alt="ENG"/><img src="media/image61.png" alt="ENG"/><img src="media/image61.png" alt="ENG"/><img src="media/image61.png" alt="ENG"/><img src="media/image64.png" alt="ENG⁻¹"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g2-eng-reverse.png" alt="Display shows 12345.6 with m (milli) prefix"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image18.png" alt="0"/><img src="media/image16.png" alt="ALT"/><img src="media/image64.png" alt="ENG⁻¹"/><img src="media/image22.png" alt="4"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g2-combination.png" alt="Display shows 210."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image20.png" alt="2"/><img src="media/image64.png" alt="ENG⁻¹"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g5-enginv-hex.png" alt="Display shows hex 16 (= decimal 22)"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image20.png" alt="2"/><img src="media/image16.png" alt="ALT"/><img src="media/image64.png" alt="ENG⁻¹"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g5-enginv-octal.png" alt="Display shows octal 26 (= decimal 22)"/></div>
+        </div>
     </article>
     <article class="key-card" id="key-20" data-search="factorial">
       <div class="key-card-head">
@@ -927,6 +1226,23 @@
           <div class="key-desc"><p>Calculate the factorial of the 1<sup>st</sup> (X) operand</p>
 <p>Alternative function is to swap the 1<sup>st</sup> (X) and 2<sup>nd</sup> (Y) operand in the current calculation</p>
 <p>When the calculation mode is base-n, then perform bitwise NOT operation of the 1<sup>st</sup> (X) operand</p></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image22.png" alt="4"/><img src="media/image67.png" alt="x!"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-factorial.png" alt="Display shows 24."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image18.png" alt="0"/><img src="media/image49.png" alt="−"/><img src="media/image21.png" alt="3"/><img src="media/image16.png" alt="ALT"/><img src="media/image67.png" alt="x!"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g3-factorial-swap.png" alt="Display shows −7."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image16.png" alt="ALT"/><img src="media/image61.png" alt="ENG"/><img src="media/image19.png" alt="1"/><img src="media/image18.png" alt="0"/><img src="media/image19.png" alt="1"/><img src="media/image67.png" alt="x!"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g5-not.png" alt="Display shows binary 1111111010 (bitwise NOT 5, 10-bit two's complement)"/></div>
         </div>
     </article>
     <article class="key-card" id="key-21" data-search="reciprocal">
@@ -940,6 +1256,23 @@
 <p>Alternative function is to swap the 1<sup>st</sup> (X) and selected volatile memory (K0 to K9)</p>
 <p>When the calculation mode is base-n, then perform bitwise AND operation of the 1<sup>st</sup> (X) and 2<sup>nd</sup> (Y) operand</p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image45.png" alt="."/><img src="media/image18.png" alt="0"/><img src="media/image19.png" alt="1"/><img src="media/image68.png" alt="1/x"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-reciprocal.png" alt="Display shows 100."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image45.png" alt="."/><img src="media/image21.png" alt="3"/><img src="media/image47.png" alt="+"/><img src="media/image21.png" alt="3"/><img src="media/image45.png" alt="."/><img src="media/image22.png" alt="4"/><img src="media/image52.png" alt="="/><img src="media/image54.png" alt="K.IN"/><img src="media/image19.png" alt="1"/><img src="media/image14.png" alt="AC"/><img src="media/image22.png" alt="4"/><img src="media/image45.png" alt="."/><img src="media/image23.png" alt="5"/><img src="media/image16.png" alt="ALT"/><img src="media/image68.png" alt="1/x"/><img src="media/image19.png" alt="1"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-reciprocal-swap-k.png" alt="Display shows 5.7"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image16.png" alt="ALT"/><img src="media/image61.png" alt="ENG"/><img src="media/image19.png" alt="1"/><img src="media/image18.png" alt="0"/><img src="media/image19.png" alt="1"/><img src="media/image68.png" alt="1/x"/><img src="media/image19.png" alt="1"/><img src="media/image19.png" alt="1"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g5-and.png" alt="Display shows binary 1 (5 AND 3)"/></div>
+        </div>
     </article>
     <article class="key-card" id="key-22" data-search="square root">
       <div class="key-card-head">
@@ -951,6 +1284,17 @@
           <div class="key-desc"><p>Calculate the square root of the 1<sup>st</sup> (X) operand</p>
 <p>When the calculation mode is base-n, then perform bitwise OR operation of the 1<sup>st</sup> (X) and 2<sup>nd</sup> (Y) operand</p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image24.png" alt="6"/><img src="media/image69.png" alt="√"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-sqrt.png" alt="Display shows 4."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image16.png" alt="ALT"/><img src="media/image61.png" alt="ENG"/><img src="media/image19.png" alt="1"/><img src="media/image18.png" alt="0"/><img src="media/image19.png" alt="1"/><img src="media/image69.png" alt="√"/><img src="media/image19.png" alt="1"/><img src="media/image19.png" alt="1"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g5-or.png" alt="Display shows binary 111 (5 OR 3)"/></div>
+        </div>
     </article>
     <article class="key-card" id="key-23" data-search="square">
       <div class="key-card-head">
@@ -961,6 +1305,17 @@
           <div class="keycaps"><img src="media/image70.png"/></div>
           <div class="key-desc"><p>Calculate the square of the 1<sup>st</sup> (X) operand</p>
 <p>When the calculation mode is base-n, then perform bitwise XOR operation of the 1<sup>st</sup> (X) and 2<sup>nd</sup> (Y) operand</p></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image25.png" alt="9"/><img src="media/image70.png" alt="x²"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-square.png" alt="Display shows 81."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image16.png" alt="ALT"/><img src="media/image61.png" alt="ENG"/><img src="media/image19.png" alt="1"/><img src="media/image18.png" alt="0"/><img src="media/image19.png" alt="1"/><img src="media/image70.png" alt="x²"/><img src="media/image19.png" alt="1"/><img src="media/image19.png" alt="1"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g5-xor.png" alt="Display shows binary 110 (5 XOR 3)"/></div>
         </div>
     </article>
     <article class="key-card" id="key-24" data-search="common logarithm">
@@ -974,6 +1329,23 @@
 <p>Alternative function is to calculate the value of 10 to the power of the 1<sup>st</sup> (X) operand</p>
 <p>When the calculation mode is base-n, then perform bitwise XNOR operation of the 1<sup>st</sup> (X) and 2<sup>nd</sup> (Y) operand</p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image18.png" alt="0"/><img src="media/image18.png" alt="0"/><img src="media/image71.png" alt="log"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-log.png" alt="Display shows 2."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image16.png" alt="ALT"/><img src="media/image71.png" alt="log"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-log-alt-pow10.png" alt="Display shows 100."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image16.png" alt="ALT"/><img src="media/image61.png" alt="ENG"/><img src="media/image19.png" alt="1"/><img src="media/image18.png" alt="0"/><img src="media/image19.png" alt="1"/><img src="media/image71.png" alt="log"/><img src="media/image19.png" alt="1"/><img src="media/image19.png" alt="1"/><img src="media/image52.png" alt="="/></div>
+          <div class="example-shot"><img src="media/example-g5-xnor.png" alt="Display shows binary 1111111001 (5 XNOR 3, 10-bit two's complement)"/></div>
+        </div>
     </article>
     <article class="key-card" id="key-25" data-search="natural logarithm">
       <div class="key-card-head">
@@ -984,6 +1356,18 @@
           <div class="keycaps"><img src="media/image72.png"/></div>
           <div class="key-desc"><p>Calculate the natural logarithm (base e=2.718...) of the 1<sup>st</sup> (X) operand</p>
 <p>Alternative function is to calculate the value of e to the power of the 1<sup>st</sup> (X) operand</p></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image24.png" alt="6"/><img src="media/image25.png" alt="9"/><img src="media/image72.png" alt="ln"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-ln.png" alt="Display shows 4.234106505"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image16.png" alt="ALT"/><img src="media/image72.png" alt="ln"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-ln-alt-exp.png" alt="Display shows 7.389056099"/></div>
         </div>
     </article>
     <article class="key-card" id="key-26" data-search="fraction">
@@ -998,6 +1382,24 @@
 <p>Alternative function is to calculate the improper fraction of the current fraction</p>
 <p>When the calculation mode is base-n, then input numeral A for hexadecimal value</p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image73.png" alt="⌟"/><img src="media/image20.png" alt="2"/><img src="media/image73.png" alt="⌟"/><img src="media/image21.png" alt="3"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-fraction.png" alt="Display shows 1 2/3"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image73.png" alt="⌟"/><img src="media/image20.png" alt="2"/><img src="media/image73.png" alt="⌟"/><img src="media/image21.png" alt="3"/><img src="media/image16.png" alt="ALT"/><img src="media/image73.png" alt="⌟"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-fraction-improper.png" alt="Display shows 5/3"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image64.png" alt="ENG⁻¹"/><img src="media/image73.png" alt="A"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g5-hexA.png" alt="Display shows hex A"/></div>
+        </div>
     </article>
     <article class="key-card" id="key-27" data-search="degree">
       <div class="key-card-head">
@@ -1009,6 +1411,24 @@
           <div class="key-desc"><p>Input the degree value in sexagesimal scale. The value will be displayed in decimal format.</p>
 <p>Alternative function is to display the value in degree format</p>
 <p>When the calculation mode is base-n, then input numeral B for hexadecimal value</p></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image22.png" alt="4"/><img src="media/image75.png" alt="°’”"/><img src="media/image20.png" alt="2"/><img src="media/image23.png" alt="5"/><img src="media/image75.png" alt="°’”"/><img src="media/image21.png" alt="3"/><img src="media/image24.png" alt="6"/><img src="media/image75.png" alt="°’”"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-dms-entry.png" alt="Display shows 14.42666667"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image18.png" alt="0"/><img src="media/image18.png" alt="0"/><img src="media/image18.png" alt="0"/><img src="media/image45.png" alt="."/><img src="media/image19.png" alt="1"/><img src="media/image43.png" alt="8"/><img src="media/image42.png" alt="7"/><img src="media/image23.png" alt="5"/><img src="media/image16.png" alt="ALT"/><img src="media/image75.png" alt="°’”"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-dms-alt.png" alt="Display shows 1000 degrees 11 minutes 15 seconds"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image64.png" alt="ENG⁻¹"/><img src="media/image75.png" alt="B"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g5-hexB.png" alt="Display shows hex B"/></div>
         </div>
     </article>
     <article class="key-card" id="key-28" data-search="hyperbolic calculation">
@@ -1043,6 +1463,36 @@
 </table></div>
 <p>When the calculation mode is base-n, then input numeral C for hexadecimal value</p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image21.png" alt="3"/><img src="media/image45.png" alt="."/><img src="media/image24.png" alt="6"/><img src="media/image76.png" alt="HYP"/><img src="media/image80.png" alt="sin"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-hyp-sinh.png" alt="Display shows 18.28545536"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image76.png" alt="HYP"/><img src="media/image81.png" alt="cos"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-hyp-cosh.png" alt="Display shows 1.543080635"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image45.png" alt="."/><img src="media/image23.png" alt="5"/><img src="media/image76.png" alt="HYP"/><img src="media/image82.png" alt="tan"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-hyp-tanh.png" alt="Display shows 0.986614298"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image18.png" alt="0"/><img src="media/image76.png" alt="HYP"/><img src="media/image16.png" alt="ALT"/><img src="media/image80.png" alt="sin"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-hyp-inverse.png" alt="Display shows 0."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image64.png" alt="ENG⁻¹"/><img src="media/image76.png" alt="C"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g5-hexC.png" alt="Display shows hex C"/></div>
+        </div>
     </article>
     <article class="key-card" id="key-29" data-search="sine">
       <div class="key-card-head">
@@ -1054,6 +1504,24 @@
           <div class="key-desc"><p>Calculate the sine value of the angle given in the 1<sup>st</sup> (X) operand in the current angle unit</p>
 <p>Alternative function is to return the angle in the current angle unit from the arc-sine calculation of the 1<sup>st</sup> (X) operand</p>
 <p>When the calculation mode is base-n, then input numeral D for hexadecimal value</p></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image21.png" alt="3"/><img src="media/image18.png" alt="0"/><img src="media/image80.png" alt="sin"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-sin.png" alt="Display shows 0.5"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image20.png" alt="2"/><img src="media/image68.png" alt="1/x"/><img src="media/image16.png" alt="ALT"/><img src="media/image80.png" alt="sin"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-sin-alt-arcsin.png" alt="Display shows 30."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image64.png" alt="ENG⁻¹"/><img src="media/image80.png" alt="D"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g5-hexD.png" alt="Display shows hex D"/></div>
         </div>
     </article>
     <article class="key-card" id="key-30" data-search="cosine">
@@ -1067,6 +1535,24 @@
 <p>Alternative function is to return the angle in the current angle unit from the arc-cosine calculation of the 1<sup>st</sup> (X) operand</p>
 <p>When the calculation mode is base-n, then input numeral E for hexadecimal value</p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image24.png" alt="6"/><img src="media/image18.png" alt="0"/><img src="media/image81.png" alt="cos"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-cos.png" alt="Display shows 0.5"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image18.png" alt="0"/><img src="media/image16.png" alt="ALT"/><img src="media/image81.png" alt="cos"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-cos-alt-arccos.png" alt="Display shows 90."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image64.png" alt="ENG⁻¹"/><img src="media/image81.png" alt="E"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g5-hexE.png" alt="Display shows hex E"/></div>
+        </div>
     </article>
     <article class="key-card" id="key-31" data-search="tangent">
       <div class="key-card-head">
@@ -1079,6 +1565,24 @@
 <p>Alternative function is to return the angle in the current angle unit from the arc-tangent calculation of the 1<sup>st</sup> (X) operand</p>
 <p>When the calculation mode is base-n, then input numeral F for hexadecimal value</p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image22.png" alt="4"/><img src="media/image23.png" alt="5"/><img src="media/image82.png" alt="tan"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-tan.png" alt="Display shows 1."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image16.png" alt="ALT"/><img src="media/image82.png" alt="tan"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g3-tan-alt-arctan.png" alt="Display shows 45."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image64.png" alt="ENG⁻¹"/><img src="media/image82.png" alt="F"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g5-hexF.png" alt="Display shows hex F"/></div>
+        </div>
     </article>
     <article class="key-card" id="key-32" data-search="sign">
       <div class="key-card-head">
@@ -1090,6 +1594,18 @@
           <div class="key-desc"><p>Change the sign of the 1<sup>st</sup> (X) operand</p>
 <p>When the calculation mode is base-n, then perform 2s complement operation of the 1<sup>st</sup> (X) operand for binary / octal / hexadecimal value</p></div>
         </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image23.png" alt="5"/><img src="media/image83.png" alt="+/−"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g1-sign-negate.png" alt="Display shows −5."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image19.png" alt="1"/><img src="media/image16.png" alt="ALT"/><img src="media/image61.png" alt="ENG"/><img src="media/image19.png" alt="1"/><img src="media/image18.png" alt="0"/><img src="media/image19.png" alt="1"/><img src="media/image18.png" alt="0"/><img src="media/image83.png" alt="+/−"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g5-negate.png" alt="Display shows binary 1111110110 (two's-complement negation of 10)"/></div>
+        </div>
     </article>
     <article class="key-card" id="key-33" data-search="delete">
       <div class="key-card-head">
@@ -1099,6 +1615,12 @@
         <div class="key-row">
           <div class="keycaps"><img src="media/image84.png"/></div>
           <div class="key-desc">Delete the previous step(s) of entry</div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image21.png" alt="3"/><img src="media/image84.png" alt="DEL"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g1-delete.png" alt="Display shows 12."/></div>
         </div>
     </article>
     <article class="key-card" id="key-34" data-search="non-volatile memory recall">
@@ -1110,6 +1632,18 @@
           <div class="keycaps"><img src="media/image85.png"/></div>
           <div class="key-desc"><p>Recall the value from the non-volatile memory (M)</p>
 <p>Alterative function is to store the current displayed value into the non-volatile memory (M)</p></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image14.png" alt="AC"/><img src="media/image16.png" alt="ALT"/><img src="media/image85.png" alt="MR"/><img src="media/image21.png" alt="3"/><img src="media/image23.png" alt="5"/><img src="media/image24.png" alt="6"/><img src="media/image45.png" alt="."/><img src="media/image19.png" alt="1"/><img src="media/image43.png" alt="8"/><img src="media/image86.png" alt="M+"/><img src="media/image14.png" alt="AC"/><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image21.png" alt="3"/><img src="media/image85.png" alt="MR"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g2-mem-recall.png" alt="Display shows 356.18"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image14.png" alt="AC"/><img src="media/image16.png" alt="ALT"/><img src="media/image85.png" alt="MR"/><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image50.png" alt="×"/><img src="media/image21.png" alt="3"/><img src="media/image52.png" alt="="/><img src="media/image16.png" alt="ALT"/><img src="media/image85.png" alt="MR"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g2-mem-store-alt.png" alt="Display shows 36."/></div>
         </div>
     </article>
     <article class="key-card" id="key-35" data-search="non-volatile memory plus / store or delete data in linear regression and statistic calculation mode">
@@ -1125,6 +1659,30 @@
         <div class="key-row">
           <div class="keycaps"><img src="media/image87.png"/></div>
           <div class="key-desc">In the linear regression and statistic calculation mode, it is used to store the data, or the alternative function is to delete the current value of 1<sup>st</sup> (X) operand from the stored data</div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image14.png" alt="AC"/><img src="media/image16.png" alt="ALT"/><img src="media/image85.png" alt="MR"/><img src="media/image21.png" alt="3"/><img src="media/image23.png" alt="5"/><img src="media/image24.png" alt="6"/><img src="media/image45.png" alt="."/><img src="media/image19.png" alt="1"/><img src="media/image43.png" alt="8"/><img src="media/image86.png" alt="M+"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g2-mem-plus.png" alt="Display shows 356.18"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image14.png" alt="AC"/><img src="media/image16.png" alt="ALT"/><img src="media/image85.png" alt="MR"/><img src="media/image19.png" alt="1"/><img src="media/image20.png" alt="2"/><img src="media/image50.png" alt="×"/><img src="media/image21.png" alt="3"/><img src="media/image52.png" alt="="/><img src="media/image16.png" alt="ALT"/><img src="media/image85.png" alt="MR"/><img src="media/image14.png" alt="AC"/><img src="media/image22.png" alt="4"/><img src="media/image23.png" alt="5"/><img src="media/image50.png" alt="×"/><img src="media/image21.png" alt="3"/><img src="media/image52.png" alt="="/><img src="media/image16.png" alt="ALT"/><img src="media/image86.png" alt="M+"/><img src="media/image85.png" alt="MR"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g2-mem-minus.png" alt="Display shows −99."/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image20.png" alt="2"/><img src="media/image20.png" alt="2"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image86.png" alt="M+"/><img src="media/image23.png" alt="5"/><img src="media/image86.png" alt="M+"/><img src="media/image42.png" alt="7"/><img src="media/image86.png" alt="M+"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g4-sd-entry.png" alt="Display shows 7. (last value entered)"/></div>
+        </div>
+        <div class="key-row example-row">
+          <p class="example-label">Example</p>
+          <div class="keycaps"><img src="media/image17.png" alt="MODE"/><img src="media/image21.png" alt="3"/><img src="media/image19.png" alt="1"/><img src="media/image55.png" alt="("/><img src="media/image20.png" alt="2"/><img src="media/image86.png" alt="M+"/><img src="media/image20.png" alt="2"/><img src="media/image55.png" alt="("/><img src="media/image22.png" alt="4"/><img src="media/image86.png" alt="M+"/><img src="media/image21.png" alt="3"/><img src="media/image55.png" alt="("/><img src="media/image24.png" alt="6"/><img src="media/image86.png" alt="M+"/></div>
+          <span class="example-arrow">→</span>
+          <div class="example-shot"><img src="media/example-g4-lr-entry.png" alt="Display shows 6. (last y value entered)"/></div>
         </div>
     </article>
         </div>
