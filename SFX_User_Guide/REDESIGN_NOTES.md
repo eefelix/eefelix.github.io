@@ -192,6 +192,33 @@ For future content changes, either:
   rebuild pipeline described above, so the `.docx` stays the source of
   truth for wording.
 
+## Step 5 — Worked-example polish: descriptions + a real aspect-ratio bug (2026-09-02)
+
+Two follow-up fixes to the Step 4 worked examples, from a real-device review:
+
+1. **Added a one-line description to every worked example.** Each of the 83 "EXAMPLE" blocks (a
+   few cover more than one of the 84 examples via shared placements) now has a
+   `<p class="example-desc">` sentence right after the "EXAMPLE" label, in plain language, saying
+   what the operation demonstrates (e.g. "Chain addition and subtraction in one expression:
+   23 + 4.5 − 53.") — previously the label was followed straight by the keystroke icons with no
+   explanation of intent.
+2. **Root-caused and fixed a real image-squeeze bug**, not just the one instance reported (the
+   `[ALT][1]` icon pair next to "Speed of light" looking squashed on a phone). Three CSS rules
+   (`.key-desc img`, `.example-shot img`, `.example-substep .example-shot img`) used the
+   pattern `width:auto; height:<fixed px>` to keep icons a consistent size — this works fine when
+   there's room, but when a narrow container (a phone-width mini-table column, in the worst cases)
+   forces the browser to shrink the image's width below what the fixed height implies, the
+   *raster content* gets non-uniformly stretched to fill the box, since the default `object-fit`
+   is `fill`. Confirmed by measuring `naturalWidth/naturalHeight` vs. rendered
+   `getBoundingClientRect()` ratios for every image on the page via headless-Chrome DevTools
+   Protocol at several phone widths (280-430px) — found up to 37% distortion on the scientific-
+   constants/stats/hyperbolic combo-icon tables, and a smaller ~8% distortion on every worked-
+   example screenshot. Fixed in two layers: `height:auto` + `max-height`/`max-width` so the image
+   scales down proportionally in the normal case, **plus `object-fit:contain` on all three rules**
+   so that even an edge case (an unusually wide source icon squeezed by both constraints at once)
+   is letterboxed instead of stretched — verified back down to a 0% mismatch across the whole page
+   at every width tested, matching the same protection already used by `.keycaps img`.
+
 ## Not yet done / open item
 
 `SFX_User_Guide/Examples/*.mp4` contains several demo videos (percentage
